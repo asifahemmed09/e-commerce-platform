@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
-
+// first copy theme color from https://ui.shadcn.com/themes
+// then in chatgpt:
+// PROMPT: convert this css to js object. don't convert css variable to cameCase
 
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
