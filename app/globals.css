@@ -1,26 +1,129 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  /* Color Palette */
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(20.82% 0.015 49.27);
+  
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(20.82% 0.015 49.27);
+  
+  --color-popover: oklch(100% 0 0);
+  --color-popover-foreground: oklch(20.82% 0.015 49.27);
+  
+  --color-primary: oklch(76.17% 0.204 89.19);
+  --color-primary-foreground: oklch(38.84% 0.115 57.28);
+  
+  --color-secondary: oklch(96.72% 0.004 106.47);
+  --color-secondary-foreground: oklch(29.04% 0.013 49.85);
+  
+  --color-muted: oklch(96.72% 0.004 106.47);
+  --color-muted-foreground: oklch(59.96% 0.011 54.01);
+  
+  --color-accent: oklch(96.72% 0.004 106.47);
+  --color-accent-foreground: oklch(29.04% 0.013 49.85);
+  
+  --color-destructive: oklch(67.35% 0.218 29.23);
+  --color-destructive-foreground: oklch(97.54% 0.007 106.47);
+  
+  --color-border: oklch(92.24% 0.005 49.27);
+  --color-input: oklch(92.24% 0.005 49.27);
+  --color-ring: oklch(20.82% 0.015 49.27);
+  
+  --color-chart-1: oklch(72.05% 0.142 37.54);
+  --color-chart-2: oklch(56.91% 0.089 200.29);
+  --color-chart-3: oklch(44.57% 0.056 229.39);
+  --color-chart-4: oklch(79.65% 0.139 84.87);
+  --color-chart-5: oklch(76.18% 0.16 49.27);
+  
+  /* Border Radius */
+  --radius: 0.5rem;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @theme {
+    --color-background: oklch(20.82% 0.015 49.27);
+    --color-foreground: oklch(97.54% 0.007 106.47);
+    
+    --color-card: oklch(20.82% 0.015 49.27);
+    --color-card-foreground: oklch(97.54% 0.007 106.47);
+    
+    --color-popover: oklch(20.82% 0.015 49.27);
+    --color-popover-foreground: oklch(97.54% 0.007 106.47);
+    
+    --color-primary: oklch(76.17% 0.204 89.19);
+    --color-primary-foreground: oklch(38.84% 0.115 57.28);
+    
+    --color-secondary: oklch(32.13% 0.009 34.13);
+    --color-secondary-foreground: oklch(97.54% 0.007 106.47);
+    
+    --color-muted: oklch(32.13% 0.009 34.13);
+    --color-muted-foreground: oklch(72.35% 0.009 49.27);
+    
+    --color-accent: oklch(32.13% 0.009 34.13);
+    --color-accent-foreground: oklch(97.54% 0.007 106.47);
+    
+    --color-destructive: oklch(48.36% 0.15 29.23);
+    --color-destructive-foreground: oklch(97.54% 0.007 106.47);
+    
+    --color-border: oklch(32.13% 0.009 34.13);
+    --color-input: oklch(32.13% 0.009 34.13);
+    --color-ring: oklch(54.23% 0.152 70.67);
+    
+    --color-chart-1: oklch(59.75% 0.154 255.71);
+    --color-chart-2: oklch(61.19% 0.094 178.68);
+    --color-chart-3: oklch(72.93% 0.15 84.87);
+    --color-chart-4: oklch(71.45% 0.128 307.36);
+    --color-chart-5: oklch(68.42% 0.15 6.36);
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .web-page-content p {
+    @apply py-2;
+  }
+  
+  .highlight-link a,
+  a.highlight-link {
+    @apply text-sky-700 hover:text-orange-700 hover:underline;
+  }
+  
+  .header-button {
+    @apply cursor-pointer p-1 border border-transparent hover:border-white rounded-[2px];
+  }
+  
+  .item-button {
+    @apply p-3 hover:bg-muted hover:no-underline;
+  }
+  
+  .h1-bold {
+    @apply font-bold text-2xl lg:text-3xl;
+  }
+  
+  .h2-bold {
+    @apply font-bold text-lg lg:text-xl;
+  }
+  
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
 }
