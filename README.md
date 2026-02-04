@@ -15,28 +15,6 @@
 
 ---
 
-## 📋 Table of Contents
-
-- [Overview](#-overview)
-- [Key Features](#-key-features)
-- [Tech Stack](#️-tech-stack)
-- [Demo](#-demo)
-- [Getting Started](#-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Environment Variables](#environment-variables)
-  - [Database Setup](#database-setup)
-- [Usage](#-usage)
-- [Project Structure](#-project-structure)
-- [API Documentation](#-api-documentation)
-- [Deployment](#-deployment)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Support](#-support)
-- [Acknowledgments](#-acknowledgments)
-
----
-
 ## 🎯 Overview
 
 A production-ready, full-stack e-commerce platform showcasing modern web development practices. Built with Next.js 15's latest features including Server Components, Server Actions, and advanced routing patterns. This project demonstrates enterprise-level architecture with authentication, payment processing, admin dashboard, and real-time data visualization.
